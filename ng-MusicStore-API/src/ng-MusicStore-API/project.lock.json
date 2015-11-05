@@ -1908,6 +1908,16 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "ng-MusicStore-Data/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Serilog": "1.5.12"
+        }
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -4013,6 +4023,16 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "ng-MusicStore-Data/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Serilog": "1.5.12"
         }
       },
       "Remotion.Linq/2.0.0-beta-002": {
@@ -6122,6 +6142,16 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "ng-MusicStore-Data/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Serilog": "1.5.12"
+        }
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -6322,6 +6352,10 @@
     }
   },
   "libraries": {
+    "ng-MusicStore-Data/1.0.0": {
+      "type": "project",
+      "path": "../ng-MusicStore-Data/project.json"
+    },
     "EntityFramework.Commands/7.0.0-beta8": {
       "type": "package",
       "serviceable": true,
@@ -8273,7 +8307,8 @@
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta8",
       "Serilog.Framework.Logging >= 1.0.0-beta8-*",
       "Serilog.Sinks.Seq >= 1.5.17",
-      "Microsoft.AspNet.Cors >= 6.0.0-beta8"
+      "Microsoft.AspNet.Cors >= 6.0.0-beta8",
+      "ng-MusicStore-Data >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": [
       "Serilog >= 1.5.12",
