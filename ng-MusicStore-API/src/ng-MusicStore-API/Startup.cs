@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.Dnx.Runtime;
+using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 
@@ -11,8 +9,25 @@ namespace ng_MusicStore_API
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public IConfigurationRoot Configuration { get; set; }
+
+        public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(appEnv.ApplicationBasePath);
+
+            if (env.IsDevelopment())
+            {
+
+                builder.AddJsonFile("appsettings.json").AddJsonFile("privatesettings.json");
+            }
+
+            builder.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+            builder.AddUserSecrets();
+            builder.AddEnvironmentVariables();
+            Configuration = builder.Build();
+
         }
 
         // This method gets called by a runtime.
