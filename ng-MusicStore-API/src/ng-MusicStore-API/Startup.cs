@@ -5,6 +5,7 @@ using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
+using Newtonsoft.Json.Serialization;
 using ng_MusicStore_Models;
 
 namespace ng_MusicStore_API
@@ -36,7 +37,10 @@ namespace ng_MusicStore_API
         // Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(opt =>
+            {
+                opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
             // services.AddWebApiConventions();
@@ -45,6 +49,9 @@ namespace ng_MusicStore_API
     .AddSqlServer()
     .AddDbContext<MusicStoreContext>(options =>
         options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+
+            services.AddCors();
+
         }
 
         // Configure is called after ConfigureServices is called.
