@@ -1,6 +1,6 @@
 ﻿{
   "webroot": "wwwroot",
-  "userSecretsId": "aspnet5-SSW.MusicStore.API-c0c9a70c-e26a-45d0-a456-0665948c00bd",
+  "userSecretsId": "aspnet5-ng_MusicStore_API-c0c9a70c-e26a-45d0-a456-0665948c00bd",
   "version": "1.0.0-*",
 
   "dependencies": {

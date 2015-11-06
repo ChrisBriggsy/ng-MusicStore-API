@@ -6,6 +6,7 @@ using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Newtonsoft.Json.Serialization;
+using ng_MusicStore_API.Services;
 using ng_MusicStore_Models;
 
 namespace ng_MusicStore_API
@@ -51,7 +52,7 @@ namespace ng_MusicStore_API
         options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
             services.AddCors();
-
+            services.AddTransient<IEmailSender, AuthMessageSender>();
         }
 
         // Configure is called after ConfigureServices is called.
